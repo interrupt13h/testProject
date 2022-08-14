@@ -1,6 +1,17 @@
 from random import randint
 
 
+def main():
+    print('Command line:')
+    done = True
+    while done:
+        new_data = input()
+        args = get_list_of_commands_from_line(new_data)
+        print(args)
+        if args == ['']:
+            done = False
+
+
 class Person:
     def __init__(self, f_name, l_name):
         self.first_name = f_name
@@ -29,11 +40,4 @@ def get_list_of_commands_from_line(text_line, sep=' '):
     return list_of_args
 
 
-print('Command line:')
-done = True
-while done:
-    new_data = input()
-    args = get_list_of_commands_from_line(new_data)
-    print(args)
-    if args == ['']:
-        done = False
+main()
